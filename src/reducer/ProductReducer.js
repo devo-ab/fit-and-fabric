@@ -7,19 +7,19 @@ const initialState = {
 };
 
 function reducer(state, action) {
-  // switch (action.type) {
-  //   case "SEARCH_PRODUCTS": {
-  //     const searchText = action.payload.toLowerCase();
+  switch (action.type) {
+    case "SEARCH_PRODUCTS": {
+      const searchText = action.payload.toLowerCase();
 
-  //     const filtered = products.filter((product) =>
-  //       product.title.toLowerCase().includes(searchText)
-  //     );
+      const filtered = products.filter((product) =>
+        product.title.toLowerCase().includes(searchText)
+      );
 
-  //     return {
-  //       ...state,
-  //       allProducts: filtered,
-  //     };
-  //   }
+      return {
+        ...state,
+        allProducts: filtered,
+      };
+    }
 
     // case "ADD_TO_CART": {
     //   const product = action.payload;
