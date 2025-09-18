@@ -21,23 +21,23 @@ function reducer(state, action) {
       };
     }
 
-    // case "ADD_TO_CART": {
-    //   const product = action.payload;
-    //   const alreadyInCart = state.addToCard.find((item) => item.id === product.id);
+    case "ADD_TO_CART": {
+      const product = action.payload;
+      const alreadyInCart = state.addToCard.find((item) => item.id === product.id);
 
-    //   if (alreadyInCart || product.stock <= 0) return state;
+      if (alreadyInCart || product.stock <= 0) return state;
 
-    //   const updatedCart = [...state.addToCard, { ...product, quantity: 1 }];
-    //   const updatedProducts = state.allProducts.map((item) =>
-    //     item.id === product.id ? { ...item, stock: item.stock - 1 } : item
-    //   );
+      const updatedCart = [...state.addToCard, { ...product, quantity: 1 }];
+      const updatedProducts = state.allProducts.map((item) =>
+        item.id === product.id ? { ...item, stock: item.stock - 1 } : item
+      );
 
-    //   return {
-    //     ...state,
-    //     addToCard: updatedCart,
-    //     allProducts: updatedProducts,
-    //   };
-    // }
+      return {
+        ...state,
+        addToCard: updatedCart,
+        allProducts: updatedProducts,
+      };
+    }
 
     // case "REMOVE_FROM_CART": {
     //   const productId = action.payload;
