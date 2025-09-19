@@ -56,25 +56,25 @@ function reducer(state, action) {
       };
     }
 
-    // case "INCREMENT_QUANTITY": {
-    //   const productId = action.payload;
-    //   const productInStock = state.allProducts.find((p) => p.id === productId);
-    //   if (!productInStock || productInStock.stock <= 0) return state;
+    case "INCREMENT_QUANTITY": {
+      const productId = action.payload;
+      const productInStock = state.allProducts.find((p) => p.id === productId);
+      if (!productInStock || productInStock.stock <= 0) return state;
 
-    //   const updatedCart = state.addToCard.map((item) =>
-    //     item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
-    //   );
+      const updatedCart = state.addToCard.map((item) =>
+        item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
+      );
 
-    //   const updatedProducts = state.allProducts.map((item) =>
-    //     item.id === productId ? { ...item, stock: item.stock - 1 } : item
-    //   );
+      const updatedProducts = state.allProducts.map((item) =>
+        item.id === productId ? { ...item, stock: item.stock - 1 } : item
+      );
 
-    //   return {
-    //     ...state,
-    //     addToCard: updatedCart,
-    //     allProducts: updatedProducts,
-    //   };
-    // }
+      return {
+        ...state,
+        addToCard: updatedCart,
+        allProducts: updatedProducts,
+      };
+    }
 
     // case "DECREMENT_QUANTITY": {
     //   const productId = action.payload;
