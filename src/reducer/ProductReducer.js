@@ -96,30 +96,30 @@ function reducer(state, action) {
       };
     }
 
-//     case "SORT_PRODUCTS": {
-//       const sortType = action.payload;
+    case "SORT_PRODUCTS": {
+      const sortType = action.payload;
 
-//       const sorters = {
-//         mostPopular: (a, b) => b.rating - a.rating,
-//         newest: (a, b) => new Date(b.date) - new Date(a.date),
-//         lowToHigh: (a, b) => (a.offerPrice ?? a.price) - (b.offerPrice ?? b.price),
-//         highToLow: (a, b) => (b.offerPrice ?? b.price) - (a.offerPrice ?? a.price),
-//       };
+      const sorters = {
+        mostPopular: (a, b) => b.rating - a.rating,
+        newest: (a, b) => new Date(b.date) - new Date(a.date),
+        lowToHigh: (a, b) => (a.offerPrice ?? a.price) - (b.offerPrice ?? b.price),
+        highToLow: (a, b) => (b.offerPrice ?? b.price) - (a.offerPrice ?? a.price),
+      };
 
-//       const sorter = sorters[sortType];
-//       if (!sorter) return state;
+      const sorter = sorters[sortType];
+      if (!sorter) return state;
 
-//       const sortedProducts = [...state.allProducts].sort(sorter);
+      const sortedProducts = [...state.allProducts].sort(sorter);
 
-//       return {
-//         ...state,
-//         allProducts: sortedProducts,
-//       };
-//     }
+      return {
+        ...state,
+        allProducts: sortedProducts,
+      };
+    }
 
-//     default:
-//       return state;
-//   }
-// }
+    default:
+      return state;
+  }
+}
 
 export { initialState, reducer };
