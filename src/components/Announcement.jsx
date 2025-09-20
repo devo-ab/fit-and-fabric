@@ -1,4 +1,10 @@
+import { useState } from "react";
+
 export default function Announcement() {
+  const [isVisible, setIsVisible] = useState(true);
+
+  if (!isVisible) return null;
+
   return (
     <div className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400 text-white py-3 px-6 text-center text-sm relative font-medium shadow-md">
       <p>
@@ -7,7 +13,11 @@ export default function Announcement() {
           Sign Up Now
         </a>
       </p>
-      <button className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-900 font-bold">
+      <button
+        onClick={() => setIsVisible(false)}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-900 font-bold text-xl"
+        aria-label="Close announcement"
+      >
         ×
       </button>
     </div>
