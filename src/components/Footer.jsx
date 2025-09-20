@@ -6,7 +6,7 @@ export default function Footer() {
           {/* Column 1 */}
           <div>
             <a href="#" className="text-2xl font-bold mb-4 block">
-              LWS.SHOP
+              Fit And Fabric
             </a>
             <p className="text-gray-600 mb-4">
               We have clothes that suits your style and which you're proud to wear. From women to
