@@ -42,38 +42,40 @@ export default function ProductBoard() {
 
   return (
     <div className="container mx-auto px-4 md:px-8 py-8">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2">
-          <ProductBar onSort={handleSorting}></ProductBar>
+  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div className="lg:col-span-2">
+      <ProductBar onSort={handleSorting}></ProductBar>
 
-          {state.allProducts.length === 0 ? (
-            <p className="text-red-600 text-4xl text-center flex items-center mx-auto">Not Found</p>
-          ) : (
-            <ProductList
-              handleAddToCard={handleAddToCard}
-              handleRemoveToCart={handleRemoveToCart}
-            ></ProductList>
-          )}
-        </div>
+      {state.allProducts.length === 0 ? (
+        <p className="text-red-600 text-4xl text-center flex items-center mx-auto">
+          Not Found
+        </p>
+      ) : (
+        <ProductList
+          handleAddToCard={handleAddToCard}
+          handleRemoveToCart={handleRemoveToCart}
+        ></ProductList>
+      )}
+    </div>
 
-        <div className="lg:col-span-1">
-          <div className="bg-white rounded-lg p-6 border border-gray-200">
-            <h2 className="text-2xl font-bold mb-6">YOUR CART</h2>
+    {/* Cart Section */}
+    <div className="lg:col-span-1">
+      <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-lg p-6 border border-gray-800 shadow-lg">
+        <h2 className="text-2xl font-bold mb-6 text-white">YOUR CART</h2>
 
-            {/* Cart Item */}
-            <CartItem
-              OnAddQuantity={handleAddQuantity}
-              onRemoveQuantity={handleRemoveQuantity}
-              onRemoveCart={handleRemoveToCart}
-            ></CartItem>
-            {/* Cart Item */}
+        {/* Cart Item */}
+        <CartItem
+          OnAddQuantity={handleAddQuantity}
+          onRemoveQuantity={handleRemoveQuantity}
+          onRemoveCart={handleRemoveToCart}
+        ></CartItem>
 
-            {/* Order Summary */}
-            <OrderSummary></OrderSummary>
-            {/* Order Summary */}
-          </div>
-        </div>
+        {/* Order Summary */}
+        <OrderSummary></OrderSummary>
       </div>
     </div>
+  </div>
+</div>
+
   );
 }
