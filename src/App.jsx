@@ -15,15 +15,15 @@ function App() {
   };
 
   return (
-    <>
+    <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 min-h-screen">
       <ProductContext.Provider value={{ state, dispatch }}>
-        <Announcement></Announcement>
-        <Header onSearch={handleSearch}></Header>
-        <ProductBoard></ProductBoard>
-        <Newsletter></Newsletter>
-        <Footer></Footer>
+        <Announcement />
+        <Header onSearch={handleSearch} />
+        <ProductBoard />
+        <Newsletter />
+        <Footer />
       </ProductContext.Provider>
-    </>
+    </div>
   );
 }
 

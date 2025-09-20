@@ -4,18 +4,18 @@ export default function Rating({ value }) {
 
   return (
     <div className="flex gap-2 items-center">
-      <div className="flex text-yellow-400">
+      <div className="flex text-teal-400">
         {[...Array(filledStars)].map((_, i) => (
-          <span key={i}>★</span> // Filled stars
+          <span key={i}>★</span>
         ))}
         {[...Array(totalStars - filledStars)].map((_, i) => (
-          <span key={i} className="text-gray-300">
+          <span key={i} className="text-gray-600">
             ★
           </span>
         ))}
       </div>
 
-      <span className="text-xs text-gray-500 ml-1">{value}/5</span>
+      <span className="text-xs text-gray-400 ml-1">{value}/5</span>
     </div>
   );
 }
